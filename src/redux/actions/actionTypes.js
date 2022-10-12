@@ -1,0 +1,5 @@
+export const ADD_TODO = 'ADD_TODO';
+export const SEARCH_FILTER = 'SEARCH_FILTER';
+export const STATUS_FILTER = 'STATUS_FILTER';
+export const PRIORITY_FILTER = 'PRIORITY_FILTER';
+export const UPDATE_COMPLETED = 'UPDATE_COMPLETED';
