@@ -1,8 +1,13 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import rootReducer from "./reducer/rootReducer";
-import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
+import { configureStore } from "@reduxjs/toolkit";
+import todoSlice from "./slices/todoSlices";
+import filterSlice from "./slices/filterSlices";
 
-export default function configureStore(initialState) {
-	const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-	return createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(reduxImmutableStateInvariant())));
-}
+const store = configureStore({
+  // rootReducer
+  reducer: {
+    filters: filterSlice.reducer,
+    todoList: todoSlice.reducer,
+  },
+});
+
+export default store;
